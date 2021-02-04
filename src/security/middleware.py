@@ -17,5 +17,10 @@ class XSSValidationMiddleware:
     """
     This middleware validates fields for XSS injection
     """
-    def resolve_fields(self, next, root, info, **args):
+
+    def resolve(self, next, root, info, **args):
+        for field, value in args.items():
+            # Either all the fields you don't want to sanitize, or reverse it and do all the fields you want to sanitize
+            if field not in ['']:
+                args[field] = bleach.clean(value)
         return next(root, info, **args)
