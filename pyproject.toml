@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "graphene-collection"
+version = "0.1.0"
+description = "A collection of middlewares and backends for Graphene"
+license = "MIT"
+authors = ["Andreas Klintberg <ankl@kth.se>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
